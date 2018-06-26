@@ -17,7 +17,7 @@ class DataInput:
     def __next__(self):
 
         if self.i == self.epoch_size:
-            raise StopIteration
+            raise StopIteratio
 
         ts = self.data[self.i * self.batch_size: min((self.i+1) * self.batch_size,
                                                      len(self.data))]
@@ -39,6 +39,12 @@ class DataInput:
                 hist_i[k][l] = t[1][l]
             k += 1
 
+        # print('-----------------')
+        # print(u)
+        # print(i)
+        # print(y)
+        # print(hist_i)
+        # print(sl)
         return self.i, (u, i, y, hist_i, sl)
 
 
